@@ -59,8 +59,86 @@ cd Sandiweb-Accessment-Back-end-junior/
     ├── models.py
   ├── migration
   ├── app.py
-  ├── README.md
-  ├── requirements.txt
   ├── test_app.py
+├── README.md
+├── requirements.txt
 
 ```
+
+## End Ponits
+
+- `POST '/products'`
+
+  - Request
+
+  ```json
+  {
+    "sku": "hmmm656",
+    "name": "shelom Homes",
+    "measure": 60,
+    "price": 800,
+    "category_id": 3
+  }
+  ```
+
+  - Response
+
+  ```json
+  {
+    "product_length": 3,
+    "products": [
+      {
+        "category_id": 3,
+        "id": 11,
+        "measure": "60",
+        "name": "shelom Homes",
+        "sku": "MKMKMK2"
+      },
+      {
+        "category_id": 3,
+        "id": 13,
+        "measure": "60",
+        "name": "shelom Homes",
+        "sku": "hjh"
+      },
+      {
+        "category_id": 3,
+        "id": 14,
+        "measure": "60",
+        "name": "shelom Homes",
+        "sku": "hmmm656"
+      }
+    ],
+    "success": true
+  }
+  ```
+
+This post a new product .
+
+- `DELETE '/products'` : Passing the ids to be delted in a list
+
+  - Request
+
+  ```json
+  {
+    "list": [11, 13]
+  }
+  ```
+
+  - Response
+
+  ```json
+  {
+    "product": [
+      {
+        "category_id": 3,
+        "id": 14,
+        "measure": "60",
+        "name": "shelom Homes",
+        "sku": "hmmm656"
+      }
+    ],
+    "product_length": 1,
+    "success": true
+  }
+  ```
