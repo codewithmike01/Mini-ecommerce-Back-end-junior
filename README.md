@@ -113,8 +113,6 @@ cd Sandiweb-Accessment-Back-end-junior/
   }
   ```
 
-This post a new product .
-
 - `DELETE '/products'` : Passing the ids to be delted in a list
 
   - Request
