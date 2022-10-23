@@ -48,6 +48,14 @@ class Product(db.Model):
     name = Column(String, nullable=False)
     measure = Column(String, nullable=False)
 
+
+    def __init__(self, price, category_id, sku, name, measure ):
+        self.name = name
+        self.sku = sku
+        self.price = price
+        self.category_id = category_id
+        self.measure = measure
+
     def insert(self):
         db.session.add(self)
         db.session.commit()
