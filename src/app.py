@@ -27,7 +27,7 @@ def create_app(test_config=None):
         response.headers.add("Access-Control-Allow-Headers","Content-Type,Authorization,true")  
         response.headers.add("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS")
         response.headers.add('Access-Control-Allow-Origin', '*')
-        response.header("Access-Control-Allow-Headers", "X-Requested-With")
+        response.headers.add("Access-Control-Allow-Headers", "X-Requested-With")
         return response
 
 # Post Product
