@@ -69,6 +69,7 @@ class Product(db.Model):
           'id': self.id,
           'name': self.name,
           'sku': self.sku,
+          'price':self.price,
           'category_id' : self.category_id,
           'measure': self.measure  
         }

@@ -18,8 +18,8 @@ def create_app(test_config=None):
     setup_db(app)
 
     # Initializa Cors
-    CORS(app, resources={r"*": {"origins": "*"}})
-
+    # CORS(app, resources={r"*": {"origins": "*"}})
+    CORS(app)
 
     #   After Request
     @app.after_request
@@ -88,8 +88,8 @@ def create_app(test_config=None):
     @app.route('/products', methods=['DELETE'])
     def delete_product():
         body = request.get_json()
+        print('Here is delete list',body)
         delete_list = body.get('list', None)
-       
         if (len(delete_list) == 0):
             abort(404)
 
