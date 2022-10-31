@@ -18,7 +18,7 @@ def create_app(test_config=None):
     setup_db(app)
 
     # Initializa Cors
-    CORS(app, resources={r"*": {"origins": "*"}})
+    CORS(app, resources={r"*": {"origins": "http://localhost:3000"}})
     # CORS(app)
 
     #   After Request
