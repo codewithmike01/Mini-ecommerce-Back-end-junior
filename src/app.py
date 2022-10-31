@@ -18,8 +18,8 @@ def create_app(test_config=None):
     setup_db(app)
 
     # Initializa Cors
-    # CORS(app, resources={r"*": {"origins": "*"}})
-    CORS(app)
+    CORS(app, resources={r"*": {"origins": "*"}})
+    # CORS(app)
 
     #   After Request
     @app.after_request
