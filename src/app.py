@@ -19,15 +19,12 @@ def create_app(test_config=None):
 
     # Initializa Cors
     CORS(app, resources={r"*": {"origins": "http://localhost:3000"}})
-    # CORS(app)
-
+   
     #   After Request
     @app.after_request
     def after_request(response):
         response.headers.add("Access-Control-Allow-Headers","Content-Type,Authorization,true")  
         response.headers.add("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS")
-        # response.headers.add('Access-Control-Allow-Origin', '*')
-        # response.headers.add("Access-Control-Allow-Headers", "X-Requested-With")
         return response
 
 # Post Product
