@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import json
 
+
 # Define database
 database_name = 'miniecommerce'
 database_path = 'postgresql://{}:{}@{}/{}'.format('mike-savy','dreamlife!','localhost:5432',database_name)

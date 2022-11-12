@@ -5,11 +5,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import random
 import os
-
-
-
-
 from src.database.models import setup_db, Category, Product
+
+
 
 
 
@@ -27,6 +25,12 @@ def create_app(test_config=None):
         response.headers.add("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE,OPTIONS")
         return response
 
+
+    @app.route('/', methods=["GET"])
+    def home():
+      return jsonify({
+        "home": "welcome"
+      })
 # Post Product
     @app.route('/products', methods=["POST"])
     def products():
